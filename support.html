@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>الدعم والمساعدة - أوقات الصلاة | Support - Prayer Times</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.8;
+            background: linear-gradient(135deg, #e8f5e9 0%, #a5d6a7 100%);
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        .card {
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #2e7d32 0%, #1b5e20 100%);
+            color: white;
+            padding: 40px;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+
+        .header p {
+            opacity: 0.9;
+            font-size: 1.1em;
+        }
+
+        .lang-switch {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            padding: 20px;
+            background: #f8f9fa;
+            border-bottom: 1px solid #eee;
+        }
+
+        .lang-btn {
+            padding: 10px 30px;
+            border: 2px solid #2e7d32;
+            background: white;
+            color: #2e7d32;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 1em;
+            transition: all 0.3s ease;
+        }
+
+        .lang-btn.active {
+            background: #2e7d32;
+            color: white;
+        }
+
+        .lang-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(46, 125, 50, 0.3);
+        }
+
+        .content {
+            padding: 40px;
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin: 25px 0;
+        }
+
+        .feature-card {
+            background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%);
+            padding: 25px;
+            border-radius: 15px;
+            text-align: center;
+        }
+
+        .feature-icon {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+
+        .feature-card h3 {
+            color: #1b5e20;
+            margin-bottom: 8px;
+        }
+
+        .feature-card p {
+            color: #666;
+            font-size: 0.95em;
+        }
+
+        .section {
+            margin-bottom: 35px;
+            padding-bottom: 35px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .section:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+        }
+
+        .section h2 {
+            color: #1b5e20;
+            font-size: 1.5em;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .section h2::before {
+            content: '';
+            width: 4px;
+            height: 25px;
+            background: #4caf50;
+            border-radius: 2px;
+        }
+
+        .section p, .section li {
+            color: #555;
+            margin-bottom: 10px;
+        }
+
+        .section ul {
+            padding-right: 25px;
+            padding-left: 25px;
+        }
+
+        .faq-item {
+            background: #f9f9f9;
+            padding: 20px;
+            margin-bottom: 15px;
+            border-radius: 12px;
+            border-right: 4px solid #4caf50;
+        }
+
+        [dir="ltr"] .faq-item {
+            border-right: none;
+            border-left: 4px solid #4caf50;
+        }
+
+        .faq-question {
+            font-weight: bold;
+            color: #1b5e20;
+            margin-bottom: 10px;
+            font-size: 1.05em;
+        }
+
+        .faq-answer {
+            color: #555;
+        }
+
+        .highlight-box {
+            background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%);
+            border-right: 4px solid #4caf50;
+            border-left: 4px solid #4caf50;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+
+        .highlight-box p {
+            color: #1b5e20;
+            font-weight: 500;
+        }
+
+        .contact-box {
+            background: #2e7d32;
+            color: white;
+            padding: 30px;
+            border-radius: 15px;
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        .contact-box h3 {
+            margin-bottom: 15px;
+            font-size: 1.3em;
+        }
+
+        .contact-box a {
+            color: white;
+            text-decoration: none;
+            font-size: 1.2em;
+            display: inline-block;
+            padding: 10px 25px;
+            background: rgba(255,255,255,0.2);
+            border-radius: 25px;
+            transition: all 0.3s ease;
+        }
+
+        .contact-box a:hover {
+            background: rgba(255,255,255,0.3);
+            transform: translateY(-2px);
+        }
+
+        .contact-box .response-time {
+            margin-top: 15px;
+            opacity: 0.9;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 20px;
+            background: #f8f9fa;
+            color: #888;
+            font-size: 0.9em;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        [dir="ltr"] .section h2::before {
+            order: -1;
+        }
+
+        @media (max-width: 600px) {
+            .header h1 {
+                font-size: 1.8em;
+            }
+
+            .content {
+                padding: 25px;
+            }
+
+            .section h2 {
+                font-size: 1.2em;
+            }
+
+            .feature-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="card">
+            <div class="header">
+                <h1 id="main-title">الدعم والمساعدة</h1>
+                <p id="app-name">تطبيق أوقات الصلاة</p>
+            </div>
+
+            <div class="lang-switch">
+                <button class="lang-btn active" onclick="switchLang('ar')">العربية</button>
+                <button class="lang-btn" onclick="switchLang('en')">English</button>
+            </div>
+
+            <!-- Arabic Content -->
+            <div id="content-ar" class="content">
+                <div class="section">
+                    <h2>مرحباً بك</h2>
+                    <p>نحن هنا لمساعدتك في الاستفادة القصوى من تطبيق أوقات الصلاة. ستجد هنا إجابات للأسئلة الشائعة ومعلومات الاتصال للحصول على الدعم.</p>
+
+                    <div class="feature-grid">
+                        <div class="feature-card">
+                            <div class="feature-icon">🕌</div>
+                            <h3>أوقات دقيقة</h3>
+                            <p>حساب دقيق بطريقة أم القرى</p>
+                        </div>
+                        <div class="feature-card">
+                            <div class="feature-icon">🔔</div>
+                            <h3>تنبيهات الصلاة</h3>
+                            <p>إشعارات صوتية لكل صلاة</p>
+                        </div>
+                        <div class="feature-card">
+                            <div class="feature-icon">📅</div>
+                            <h3>التقويم الهجري</h3>
+                            <p>عرض التاريخ الهجري والميلادي</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <h2>الأسئلة الشائعة</h2>
+
+                    <div class="faq-item">
+                        <div class="faq-question">كيف أختار موقعي؟</div>
+                        <div class="faq-answer">يمكنك السماح للتطبيق بتحديد موقعك تلقائياً عبر GPS، أو اختيار مدينتك يدوياً من قائمة المدن المتوفرة. اذهب للإعدادات > الموقع.</div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question">كيف أفعّل إشعارات الصلاة؟</div>
+                        <div class="faq-answer">اذهب للإعدادات > الإشعارات، ثم فعّل "إشعارات الصلاة". يمكنك اختيار الصلوات التي تريد التنبيه لها وتفعيل/تعطيل الصوت والاهتزاز.</div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question">كيف أعدّل وقت الأذان أو الإقامة؟</div>
+                        <div class="faq-answer">اذهب للإعدادات وستجد خيارات "تعديل وقت الأذان" و"إعدادات وقت الإقامة". يمكنك تعديل الوقت لكل صلاة بشكل مستقل.</div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question">كيف أعدّل التاريخ الهجري؟</div>
+                        <div class="faq-answer">اذهب للإعدادات > تعديل التاريخ الهجري. يمكنك تقديم أو تأخير التاريخ الهجري بيوم واحد حسب رؤية الهلال في منطقتك.</div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question">كيف أستعرض أوقات الصلاة لأيام أخرى؟</div>
+                        <div class="faq-answer">على الشاشة الرئيسية، اسحب يميناً أو يساراً للتنقل بين الأيام (أمس، اليوم، غداً). التطبيق يعود تلقائياً لصفحة اليوم بعد 5 ثوانٍ.</div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question">ما هي طريقة حساب أوقات الصلاة؟</div>
+                        <div class="faq-answer">يستخدم التطبيق طريقة حساب أم القرى (مكة المكرمة) لحساب أوقات الصلاة، مع مذهب الشافعي/الحنبلي/المالكي لوقت العصر.</div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question">كيف أغير لغة التطبيق؟</div>
+                        <div class="faq-answer">اذهب للإعدادات واختر اللغة المفضلة (العربية أو الإنجليزية). التطبيق يدعم كلا الاتجاهين.</div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question">كيف أغير المظهر من فاتح إلى داكن؟</div>
+                        <div class="faq-answer">اذهب للإعدادات > المظهر، واختر بين الفاتح، الداكن، أو التلقائي حسب إعدادات النظام.</div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question">لماذا لا تعمل الإشعارات؟</div>
+                        <div class="faq-answer">تأكد من: 1) تفعيل الإشعارات في إعدادات التطبيق، 2) السماح للتطبيق بإرسال إشعارات في إعدادات الجهاز، 3) اختيار مدينة يدوياً (الإشعارات تتطلب الوضع اليدوي).</div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question">هل يحتاج التطبيق للإنترنت؟</div>
+                        <div class="faq-answer">لا، التطبيق يحسب أوقات الصلاة محلياً على جهازك ولا يحتاج للإنترنت. يُستخدم الإنترنت فقط لتحديد الموقع عبر GPS (اختياري).</div>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <h2>مميزات التطبيق</h2>
+                    <ul>
+                        <li>أوقات الصلوات الخمس (الفجر، الظهر، العصر، المغرب، العشاء)</li>
+                        <li>أوقات الشروق والضحى ومنتصف الليل والثلث الأخير</li>
+                        <li>إشعارات صوتية لأوقات الصلاة</li>
+                        <li>التقويم الهجري مع إمكانية التعديل</li>
+                        <li>تعديل أوقات الأذان والإقامة</li>
+                        <li>دعم اللغتين العربية والإنجليزية</li>
+                        <li>المظهر الفاتح والداكن</li>
+                        <li>تحديد الموقع تلقائياً أو يدوياً</li>
+                    </ul>
+                </div>
+
+                <div class="contact-box">
+                    <h3>تواصل معنا</h3>
+                    <p>نحن هنا للمساعدة! لا تتردد في التواصل معنا</p>
+                    <a href="mailto:saudiweatherapp@gmail.com">saudiweatherapp@gmail.com</a>
+                    <p class="response-time">نرد عادة خلال 24-48 ساعة</p>
+                </div>
+            </div>
+
+            <!-- English Content -->
+            <div id="content-en" class="content hidden">
+                <div class="section">
+                    <h2>Welcome</h2>
+                    <p>We're here to help you get the most out of the Prayer Times app. Find answers to common questions and contact information for support.</p>
+
+                    <div class="feature-grid">
+                        <div class="feature-card">
+                            <div class="feature-icon">🕌</div>
+                            <h3>Accurate Times</h3>
+                            <p>Precise calculation using Umm Al-Qura method</p>
+                        </div>
+                        <div class="feature-card">
+                            <div class="feature-icon">🔔</div>
+                            <h3>Prayer Alerts</h3>
+                            <p>Audio notifications for each prayer</p>
+                        </div>
+                        <div class="feature-card">
+                            <div class="feature-icon">📅</div>
+                            <h3>Hijri Calendar</h3>
+                            <p>Display Hijri and Gregorian dates</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <h2>Frequently Asked Questions</h2>
+
+                    <div class="faq-item">
+                        <div class="faq-question">How do I set my location?</div>
+                        <div class="faq-answer">You can allow the app to detect your location automatically via GPS, or select your city manually from the available cities list. Go to Settings > Location.</div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question">How do I enable prayer notifications?</div>
+                        <div class="faq-answer">Go to Settings > Notifications, then enable "Prayer Notifications". You can choose which prayers to be notified for and enable/disable sound and vibration.</div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question">How do I adjust Adhan or Iqama time?</div>
+                        <div class="faq-answer">Go to Settings and you'll find "Adhan Time Adjustment" and "Iqama Time Settings" options. You can adjust the time for each prayer independently.</div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question">How do I adjust the Hijri date?</div>
+                        <div class="faq-answer">Go to Settings > Hijri Date Adjustment. You can advance or delay the Hijri date by one day based on moon sighting in your region.</div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question">How do I view prayer times for other days?</div>
+                        <div class="faq-answer">On the main screen, swipe left or right to navigate between days (yesterday, today, tomorrow). The app automatically returns to today's page after 5 seconds.</div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question">What calculation method is used?</div>
+                        <div class="faq-answer">The app uses the Umm Al-Qura (Makkah) calculation method for prayer times, with Shafi'i/Hanbali/Maliki juristic method for Asr time.</div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question">How do I change the app language?</div>
+                        <div class="faq-answer">Go to Settings and choose your preferred language (Arabic or English). The app supports both RTL and LTR directions.</div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question">How do I change the theme from light to dark?</div>
+                        <div class="faq-answer">Go to Settings > Theme, and choose between Light, Dark, or System default.</div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question">Why are notifications not working?</div>
+                        <div class="faq-answer">Make sure: 1) Notifications are enabled in app settings, 2) The app is allowed to send notifications in device settings, 3) You've selected a city manually (notifications require manual mode).</div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question">Does the app need internet?</div>
+                        <div class="faq-answer">No, the app calculates prayer times locally on your device and doesn't need internet. Internet is only used for GPS location detection (optional).</div>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <h2>App Features</h2>
+                    <ul>
+                        <li>Five daily prayer times (Fajr, Dhuhr, Asr, Maghrib, Isha)</li>
+                        <li>Sunrise, Duha, midnight, and last third of night times</li>
+                        <li>Audio notifications for prayer times</li>
+                        <li>Hijri calendar with adjustment option</li>
+                        <li>Adhan and Iqama time adjustments</li>
+                        <li>Arabic and English language support</li>
+                        <li>Light and dark themes</li>
+                        <li>Automatic or manual location detection</li>
+                    </ul>
+                </div>
+
+                <div class="contact-box">
+                    <h3>Contact Us</h3>
+                    <p>We're here to help! Don't hesitate to reach out</p>
+                    <a href="mailto:saudiweatherapp@gmail.com">saudiweatherapp@gmail.com</a>
+                    <p class="response-time">We usually respond within 24-48 hours</p>
+                </div>
+            </div>
+
+            <div class="footer">
+                <p>© 2026 Prayer Times App. All rights reserved.</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function switchLang(lang) {
+            const html = document.documentElement;
+            const arContent = document.getElementById('content-ar');
+            const enContent = document.getElementById('content-en');
+            const mainTitle = document.getElementById('main-title');
+            const appName = document.getElementById('app-name');
+            const buttons = document.querySelectorAll('.lang-btn');
+
+            buttons.forEach(btn => btn.classList.remove('active'));
+
+            if (lang === 'ar') {
+                html.setAttribute('lang', 'ar');
+                html.setAttribute('dir', 'rtl');
+                arContent.classList.remove('hidden');
+                enContent.classList.add('hidden');
+                mainTitle.textContent = 'الدعم والمساعدة';
+                appName.textContent = 'تطبيق أوقات الصلاة';
+                buttons[0].classList.add('active');
+            } else {
+                html.setAttribute('lang', 'en');
+                html.setAttribute('dir', 'ltr');
+                arContent.classList.add('hidden');
+                enContent.classList.remove('hidden');
+                mainTitle.textContent = 'Support & Help';
+                appName.textContent = 'Prayer Times App';
+                buttons[1].classList.add('active');
+            }
+        }
+    </script>
+</body>
+</html>
