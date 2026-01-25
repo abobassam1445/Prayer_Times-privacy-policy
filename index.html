@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>سياسة الخصوصية - أوقات الصلاة | Privacy Policy - Prayer Times</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.8;
+            background: linear-gradient(135deg, #e8f5e9 0%, #a5d6a7 100%);
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        .card {
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #2e7d32 0%, #1b5e20 100%);
+            color: white;
+            padding: 40px;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+
+        .header p {
+            opacity: 0.9;
+            font-size: 1.1em;
+        }
+
+        .lang-switch {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            padding: 20px;
+            background: #f8f9fa;
+            border-bottom: 1px solid #eee;
+        }
+
+        .lang-btn {
+            padding: 10px 30px;
+            border: 2px solid #2e7d32;
+            background: white;
+            color: #2e7d32;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 1em;
+            transition: all 0.3s ease;
+        }
+
+        .lang-btn.active {
+            background: #2e7d32;
+            color: white;
+        }
+
+        .lang-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(46, 125, 50, 0.3);
+        }
+
+        .content {
+            padding: 40px;
+        }
+
+        .section {
+            margin-bottom: 35px;
+            padding-bottom: 35px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .section:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+        }
+
+        .section h2 {
+            color: #1b5e20;
+            font-size: 1.5em;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .section h2::before {
+            content: '';
+            width: 4px;
+            height: 25px;
+            background: #4caf50;
+            border-radius: 2px;
+        }
+
+        .section p, .section li {
+            color: #555;
+            margin-bottom: 10px;
+        }
+
+        .section ul {
+            padding-right: 25px;
+            padding-left: 25px;
+        }
+
+        .highlight-box {
+            background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%);
+            border-right: 4px solid #4caf50;
+            border-left: 4px solid #4caf50;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+
+        .highlight-box p {
+            color: #1b5e20;
+            font-weight: 500;
+        }
+
+        .contact-box {
+            background: #2e7d32;
+            color: white;
+            padding: 30px;
+            border-radius: 15px;
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        .contact-box h3 {
+            margin-bottom: 15px;
+            font-size: 1.3em;
+        }
+
+        .contact-box a {
+            color: white;
+            text-decoration: none;
+            font-size: 1.2em;
+            display: inline-block;
+            padding: 10px 25px;
+            background: rgba(255,255,255,0.2);
+            border-radius: 25px;
+            transition: all 0.3s ease;
+        }
+
+        .contact-box a:hover {
+            background: rgba(255,255,255,0.3);
+            transform: translateY(-2px);
+        }
+
+        .footer {
+            text-align: center;
+            padding: 20px;
+            background: #f8f9fa;
+            color: #888;
+            font-size: 0.9em;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        [dir="ltr"] .section h2::before {
+            order: -1;
+        }
+
+        @media (max-width: 600px) {
+            .header h1 {
+                font-size: 1.8em;
+            }
+
+            .content {
+                padding: 25px;
+            }
+
+            .section h2 {
+                font-size: 1.2em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="card">
+            <div class="header">
+                <h1 id="main-title">سياسة الخصوصية</h1>
+                <p id="app-name">تطبيق أوقات الصلاة</p>
+            </div>
+
+            <div class="lang-switch">
+                <button class="lang-btn active" onclick="switchLang('ar')">العربية</button>
+                <button class="lang-btn" onclick="switchLang('en')">English</button>
+            </div>
+
+            <!-- Arabic Content -->
+            <div id="content-ar" class="content">
+                <div class="section">
+                    <h2>مقدمة</h2>
+                    <p>مرحباً بكم في تطبيق أوقات الصلاة. نحن نلتزم بحماية خصوصيتكم وبياناتكم الشخصية. توضح هذه السياسة كيفية تعاملنا مع معلوماتكم.</p>
+
+                    <div class="highlight-box">
+                        <p>نحن لا نجمع أي بيانات شخصية ولا نرسلها لأي خوادم خارجية. جميع البيانات تُخزّن محلياً على جهازكم فقط.</p>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <h2>جمع البيانات</h2>
+                    <div class="highlight-box">
+                        <p>نحن لا نجمع أي بيانات شخصية من خلال التطبيق. لا يتم إرسال أي معلومات إلى خوادم خارجية.</p>
+                    </div>
+                    <p>التطبيق يستخدم البيانات التالية محلياً:</p>
+                    <ul>
+                        <li><strong>الموقع الجغرافي:</strong> يُستخدم لحساب أوقات الصلاة بدقة (اختياري - يمكن اختيار المدينة يدوياً)</li>
+                        <li><strong>المدينة المختارة:</strong> تُخزّن محلياً على جهازكم</li>
+                        <li><strong>إعدادات الإشعارات:</strong> تفضيلات التنبيه لأوقات الصلاة تُخزّن محلياً</li>
+                        <li><strong>إعدادات التطبيق:</strong> اللغة والمظهر وتعديلات الوقت تُخزّن محلياً</li>
+                    </ul>
+                </div>
+
+                <div class="section">
+                    <h2>كيف نستخدم بياناتكم</h2>
+                    <p>البيانات تُستخدم فقط للأغراض التالية:</p>
+                    <ul>
+                        <li>حساب أوقات الصلاة بناءً على موقعكم أو المدينة المختارة</li>
+                        <li>إرسال إشعارات تذكير بأوقات الصلاة (إذا تم تفعيلها)</li>
+                        <li>عرض التاريخ الهجري والميلادي</li>
+                        <li>حفظ تفضيلات التطبيق</li>
+                    </ul>
+                </div>
+
+                <div class="section">
+                    <h2>تخزين البيانات</h2>
+                    <p>جميع بياناتكم وتفضيلاتكم تُخزّن محلياً على جهازكم فقط باستخدام SharedPreferences. لا يتم إرسال أي بيانات إلى خوادم خارجية.</p>
+                    <div class="highlight-box">
+                        <p>البيانات المخزنة محلياً: المدينة المختارة، إعدادات الإشعارات، اللغة، المظهر، تعديلات وقت الأذان والإقامة، التاريخ الهجري.</p>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <h2>الأذونات المطلوبة</h2>
+                    <p>التطبيق قد يتطلب الأذونات التالية:</p>
+                    <ul>
+                        <li><strong>الموقع الجغرافي (اختياري):</strong> لتحديد موقعكم تلقائياً لحساب أوقات الصلاة بدقة</li>
+                        <li><strong>الإشعارات:</strong> لإرسال تنبيهات بأوقات الصلاة</li>
+                    </ul>
+                    <p>يمكنكم استخدام التطبيق بدون إذن الموقع عبر اختيار المدينة يدوياً.</p>
+                </div>
+
+                <div class="section">
+                    <h2>حساب أوقات الصلاة</h2>
+                    <p>يتم حساب أوقات الصلاة محلياً على جهازكم باستخدام:</p>
+                    <ul>
+                        <li><strong>طريقة الحساب:</strong> أم القرى (مكة المكرمة)</li>
+                        <li><strong>مذهب العصر:</strong> الشافعي/الحنبلي/المالكي</li>
+                    </ul>
+                    <p>لا يتم الاتصال بأي خوادم خارجية لحساب أوقات الصلاة.</p>
+                </div>
+
+                <div class="section">
+                    <h2>خدمات الطرف الثالث</h2>
+                    <div class="highlight-box">
+                        <p>التطبيق لا يستخدم أي خدمات طرف ثالث لجمع البيانات أو التحليلات. جميع الحسابات تتم محلياً.</p>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <h2>أمان البيانات</h2>
+                    <p>نحرص على أمان بياناتكم من خلال:</p>
+                    <ul>
+                        <li>تخزين جميع البيانات محلياً على جهازكم فقط</li>
+                        <li>عدم إرسال أي بيانات لخوادم خارجية</li>
+                        <li>عدم جمع أي بيانات شخصية</li>
+                    </ul>
+                </div>
+
+                <div class="section">
+                    <h2>حقوقكم</h2>
+                    <p>لديكم الحق في:</p>
+                    <ul>
+                        <li>رفض إذن الموقع واختيار المدينة يدوياً</li>
+                        <li>تعطيل الإشعارات في أي وقت</li>
+                        <li>حذف جميع بياناتكم عبر مسح بيانات التطبيق</li>
+                        <li>إلغاء تثبيت التطبيق مما يحذف جميع البيانات المخزنة</li>
+                    </ul>
+                </div>
+
+                <div class="section">
+                    <h2>خصوصية الأطفال</h2>
+                    <p>التطبيق مناسب لجميع الأعمار. لا نجمع أي معلومات شخصية من أي مستخدم بما في ذلك الأطفال.</p>
+                </div>
+
+                <div class="section">
+                    <h2>التغييرات على هذه السياسة</h2>
+                    <p>قد نقوم بتحديث سياسة الخصوصية من وقت لآخر. سيتم إعلامكم بأي تغييرات جوهرية من خلال تحديث التطبيق.</p>
+                    <p><strong>آخر تحديث:</strong> يناير 2026</p>
+                </div>
+
+                <div class="contact-box">
+                    <h3>تواصل معنا</h3>
+                    <p>لأي استفسارات حول سياسة الخصوصية:</p>
+                    <a href="mailto:saudiweatherapp@gmail.com">saudiweatherapp@gmail.com</a>
+                </div>
+            </div>
+
+            <!-- English Content -->
+            <div id="content-en" class="content hidden">
+                <div class="section">
+                    <h2>Introduction</h2>
+                    <p>Welcome to Prayer Times app. We are committed to protecting your privacy and personal data. This policy explains how we handle your information.</p>
+
+                    <div class="highlight-box">
+                        <p>We do not collect any personal data and do not send it to any external servers. All data is stored locally on your device only.</p>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <h2>Data Collection</h2>
+                    <div class="highlight-box">
+                        <p>We do not collect any personal data through the app. No information is sent to external servers.</p>
+                    </div>
+                    <p>The app uses the following data locally:</p>
+                    <ul>
+                        <li><strong>Location:</strong> Used to calculate accurate prayer times (optional - you can select city manually)</li>
+                        <li><strong>Selected city:</strong> Stored locally on your device</li>
+                        <li><strong>Notification settings:</strong> Prayer time alert preferences stored locally</li>
+                        <li><strong>App settings:</strong> Language, theme, and time adjustments stored locally</li>
+                    </ul>
+                </div>
+
+                <div class="section">
+                    <h2>How We Use Your Data</h2>
+                    <p>Data is used only for the following purposes:</p>
+                    <ul>
+                        <li>Calculate prayer times based on your location or selected city</li>
+                        <li>Send prayer time reminder notifications (if enabled)</li>
+                        <li>Display Hijri and Gregorian dates</li>
+                        <li>Save app preferences</li>
+                    </ul>
+                </div>
+
+                <div class="section">
+                    <h2>Data Storage</h2>
+                    <p>All your data and preferences are stored locally on your device only using SharedPreferences. No data is sent to external servers.</p>
+                    <div class="highlight-box">
+                        <p>Data stored locally: selected city, notification settings, language, theme, adhan and iqama time adjustments, Hijri date settings.</p>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <h2>Required Permissions</h2>
+                    <p>The app may require the following permissions:</p>
+                    <ul>
+                        <li><strong>Location (optional):</strong> To automatically detect your location for accurate prayer time calculation</li>
+                        <li><strong>Notifications:</strong> To send prayer time alerts</li>
+                    </ul>
+                    <p>You can use the app without location permission by selecting your city manually.</p>
+                </div>
+
+                <div class="section">
+                    <h2>Prayer Time Calculation</h2>
+                    <p>Prayer times are calculated locally on your device using:</p>
+                    <ul>
+                        <li><strong>Calculation method:</strong> Umm Al-Qura (Makkah)</li>
+                        <li><strong>Asr juristic method:</strong> Shafi'i/Hanbali/Maliki</li>
+                    </ul>
+                    <p>No external servers are contacted for prayer time calculations.</p>
+                </div>
+
+                <div class="section">
+                    <h2>Third-Party Services</h2>
+                    <div class="highlight-box">
+                        <p>The app does not use any third-party services for data collection or analytics. All calculations are done locally.</p>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <h2>Data Security</h2>
+                    <p>We ensure the security of your data by:</p>
+                    <ul>
+                        <li>Storing all data locally on your device only</li>
+                        <li>Not sending any data to external servers</li>
+                        <li>Not collecting any personal data</li>
+                    </ul>
+                </div>
+
+                <div class="section">
+                    <h2>Your Rights</h2>
+                    <p>You have the right to:</p>
+                    <ul>
+                        <li>Deny location permission and select city manually</li>
+                        <li>Disable notifications at any time</li>
+                        <li>Delete all your data by clearing app data</li>
+                        <li>Uninstall the app which will delete all stored data</li>
+                    </ul>
+                </div>
+
+                <div class="section">
+                    <h2>Children's Privacy</h2>
+                    <p>The app is suitable for all ages. We do not collect any personal information from any user including children.</p>
+                </div>
+
+                <div class="section">
+                    <h2>Changes to This Policy</h2>
+                    <p>We may update the privacy policy from time to time. You will be notified of any significant changes through app updates.</p>
+                    <p><strong>Last updated:</strong> January 2026</p>
+                </div>
+
+                <div class="contact-box">
+                    <h3>Contact Us</h3>
+                    <p>For any questions about the privacy policy:</p>
+                    <a href="mailto:saudiweatherapp@gmail.com">saudiweatherapp@gmail.com</a>
+                </div>
+            </div>
+
+            <div class="footer">
+                <p>© 2026 Prayer Times App. All rights reserved.</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function switchLang(lang) {
+            const html = document.documentElement;
+            const arContent = document.getElementById('content-ar');
+            const enContent = document.getElementById('content-en');
+            const mainTitle = document.getElementById('main-title');
+            const appName = document.getElementById('app-name');
+            const buttons = document.querySelectorAll('.lang-btn');
+
+            buttons.forEach(btn => btn.classList.remove('active'));
+
+            if (lang === 'ar') {
+                html.setAttribute('lang', 'ar');
+                html.setAttribute('dir', 'rtl');
+                arContent.classList.remove('hidden');
+                enContent.classList.add('hidden');
+                mainTitle.textContent = 'سياسة الخصوصية';
+                appName.textContent = 'تطبيق أوقات الصلاة';
+                buttons[0].classList.add('active');
+            } else {
+                html.setAttribute('lang', 'en');
+                html.setAttribute('dir', 'ltr');
+                arContent.classList.add('hidden');
+                enContent.classList.remove('hidden');
+                mainTitle.textContent = 'Privacy Policy';
+                appName.textContent = 'Prayer Times App';
+                buttons[1].classList.add('active');
+            }
+        }
+    </script>
+</body>
+</html>
