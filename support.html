@@ -50,6 +50,7 @@
 
         .lang-switch {
             display: flex;
+            flex-wrap: wrap;
             justify-content: center;
             gap: 10px;
             padding: 20px;
@@ -66,6 +67,7 @@
             cursor: pointer;
             font-size: 1em;
             transition: all 0.3s ease;
+            -webkit-tap-highlight-color: rgba(46, 125, 50, 0.2);
         }
 
         .lang-btn.active {
@@ -137,11 +139,14 @@
             height: 25px;
             background: #4caf50;
             border-radius: 2px;
+            flex-shrink: 0;
         }
 
         .section p, .section li {
             color: #555;
             margin-bottom: 10px;
+            overflow-wrap: break-word;
+            word-wrap: break-word;
         }
 
         .section ul {
@@ -171,6 +176,8 @@
 
         .faq-answer {
             color: #555;
+            overflow-wrap: break-word;
+            word-wrap: break-word;
         }
 
         .highlight-box {
@@ -185,6 +192,9 @@
         .highlight-box p {
             color: #1b5e20;
             font-weight: 500;
+            overflow-wrap: break-word;
+            word-wrap: break-word;
+            margin-bottom: 0;
         }
 
         .contact-box {
@@ -201,6 +211,11 @@
             font-size: 1.3em;
         }
 
+        .contact-box p {
+            margin-bottom: 15px;
+            overflow-wrap: break-word;
+        }
+
         .contact-box a {
             color: white;
             text-decoration: none;
@@ -210,6 +225,7 @@
             background: rgba(255,255,255,0.2);
             border-radius: 25px;
             transition: all 0.3s ease;
+            -webkit-tap-highlight-color: rgba(255, 255, 255, 0.3);
         }
 
         .contact-box a:hover {
@@ -238,21 +254,364 @@
             order: -1;
         }
 
+        /* Tablet screens */
+        @media (max-width: 900px) {
+            .container {
+                padding: 30px 15px;
+            }
+
+            .header {
+                padding: 35px 30px;
+            }
+
+            .header h1 {
+                font-size: 2.2em;
+            }
+
+            .content {
+                padding: 35px;
+            }
+
+            .contact-box {
+                padding: 25px;
+            }
+        }
+
+        /* Small tablets and large phones */
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px 12px;
+            }
+
+            .card {
+                border-radius: 16px;
+            }
+
+            .header {
+                padding: 30px 25px;
+            }
+
+            .header h1 {
+                font-size: 2em;
+            }
+
+            .header p {
+                font-size: 1em;
+            }
+
+            .content {
+                padding: 30px;
+            }
+
+            .section {
+                margin-bottom: 28px;
+                padding-bottom: 28px;
+            }
+
+            .section h2 {
+                font-size: 1.35em;
+            }
+
+            .feature-card {
+                padding: 20px;
+            }
+
+            .faq-item {
+                padding: 18px;
+            }
+
+            .contact-box {
+                padding: 22px;
+            }
+
+            .contact-box a {
+                font-size: 1.1em;
+                padding: 10px 20px;
+            }
+        }
+
+        /* Mobile phones */
         @media (max-width: 600px) {
+            .container {
+                padding: 15px 10px;
+            }
+
+            .card {
+                border-radius: 12px;
+            }
+
+            .header {
+                padding: 25px 20px;
+            }
+
             .header h1 {
                 font-size: 1.8em;
             }
 
+            .header p {
+                font-size: 0.95em;
+            }
+
+            .lang-switch {
+                padding: 15px;
+                gap: 8px;
+            }
+
+            .lang-btn {
+                padding: 8px 20px;
+                font-size: 0.95em;
+            }
+
             .content {
-                padding: 25px;
+                padding: 25px 20px;
+            }
+
+            .section {
+                margin-bottom: 25px;
+                padding-bottom: 25px;
             }
 
             .section h2 {
                 font-size: 1.2em;
+                gap: 8px;
+            }
+
+            .section h2::before {
+                width: 3px;
+                height: 20px;
+            }
+
+            .section ul {
+                padding-right: 20px;
+                padding-left: 20px;
+            }
+
+            .section p, .section li {
+                font-size: 0.95em;
             }
 
             .feature-grid {
                 grid-template-columns: 1fr;
+                gap: 15px;
+            }
+
+            .feature-card {
+                padding: 18px;
+            }
+
+            .feature-icon {
+                font-size: 2em;
+            }
+
+            .feature-card h3 {
+                font-size: 1em;
+            }
+
+            .feature-card p {
+                font-size: 0.9em;
+            }
+
+            .faq-item {
+                padding: 15px;
+                margin-bottom: 12px;
+            }
+
+            .faq-question {
+                font-size: 1em;
+            }
+
+            .faq-answer {
+                font-size: 0.95em;
+            }
+
+            .contact-box {
+                padding: 20px 15px;
+                border-radius: 12px;
+                margin-top: 25px;
+            }
+
+            .contact-box h3 {
+                font-size: 1.15em;
+            }
+
+            .contact-box a {
+                font-size: 1em;
+                padding: 10px 18px;
+                word-break: break-all;
+            }
+
+            .footer {
+                padding: 15px;
+                font-size: 0.85em;
+            }
+        }
+
+        /* Very small phones */
+        @media (max-width: 400px) {
+            .container {
+                padding: 10px 8px;
+            }
+
+            .card {
+                border-radius: 10px;
+            }
+
+            .header {
+                padding: 20px 15px;
+            }
+
+            .header h1 {
+                font-size: 1.5em;
+            }
+
+            .header p {
+                font-size: 0.9em;
+            }
+
+            .lang-switch {
+                padding: 12px 10px;
+                gap: 6px;
+            }
+
+            .lang-btn {
+                padding: 8px 16px;
+                font-size: 0.9em;
+                border-radius: 20px;
+            }
+
+            .content {
+                padding: 20px 15px;
+            }
+
+            .section {
+                margin-bottom: 20px;
+                padding-bottom: 20px;
+            }
+
+            .section h2 {
+                font-size: 1.1em;
+            }
+
+            .section ul {
+                padding-right: 18px;
+                padding-left: 18px;
+            }
+
+            .section p, .section li {
+                font-size: 0.9em;
+                line-height: 1.7;
+            }
+
+            .feature-card {
+                padding: 15px;
+            }
+
+            .faq-item {
+                padding: 12px;
+            }
+
+            .faq-question {
+                font-size: 0.95em;
+            }
+
+            .faq-answer {
+                font-size: 0.9em;
+            }
+
+            .contact-box {
+                padding: 18px 12px;
+            }
+
+            .contact-box h3 {
+                font-size: 1.1em;
+                margin-bottom: 12px;
+            }
+
+            .contact-box p {
+                font-size: 0.9em;
+            }
+
+            .contact-box a {
+                font-size: 0.9em;
+                padding: 8px 15px;
+            }
+
+            .footer {
+                padding: 12px;
+                font-size: 0.8em;
+            }
+        }
+
+        /* Ensure touch targets are large enough on mobile */
+        @media (hover: none) and (pointer: coarse) {
+            .lang-btn {
+                min-height: 44px;
+                min-width: 44px;
+            }
+
+            .contact-box a {
+                min-height: 44px;
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+            }
+        }
+
+        /* Landscape orientation on mobile */
+        @media (max-height: 500px) and (orientation: landscape) {
+            .header {
+                padding: 20px;
+            }
+
+            .header h1 {
+                font-size: 1.6em;
+                margin-bottom: 5px;
+            }
+
+            .content {
+                padding: 20px;
+            }
+
+            .section {
+                margin-bottom: 20px;
+                padding-bottom: 20px;
+            }
+
+            .feature-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        /* Print styles */
+        @media print {
+            body {
+                background: white;
+            }
+
+            .container {
+                max-width: 100%;
+                padding: 0;
+            }
+
+            .card {
+                box-shadow: none;
+                border-radius: 0;
+            }
+
+            .lang-switch {
+                display: none;
+            }
+
+            .header {
+                background: #2e7d32 !important;
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+
+            .contact-box {
+                background: #2e7d32 !important;
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
             }
         }
     </style>
@@ -280,7 +639,7 @@
                         <div class="feature-card">
                             <div class="feature-icon">🕌</div>
                             <h3>أوقات دقيقة</h3>
-                            <p>حساب دقيق بطريقة أم القرى</p>
+                            <p>طرق حساب متعددة ومذاهب فقهية</p>
                         </div>
                         <div class="feature-card">
                             <div class="feature-icon">🔔</div>
@@ -325,7 +684,7 @@
 
                     <div class="faq-item">
                         <div class="faq-question">ما هي طريقة حساب أوقات الصلاة؟</div>
-                        <div class="faq-answer">يستخدم التطبيق طريقة حساب أم القرى (مكة المكرمة) لحساب أوقات الصلاة، مع مذهب الشافعي/الحنبلي/المالكي لوقت العصر.</div>
+                        <div class="faq-answer">يوفر التطبيق طرق حساب متعددة (أم القرى، رابطة العالم الإسلامي، الهيئة المصرية، وغيرها). كما يمكنك اختيار مذهب العصر: الشافعي (الشافعي/المالكي/الحنبلي) أو الحنفي. اذهب للإعدادات لتغيير طريقة الحساب أو المذهب.</div>
                     </div>
 
                     <div class="faq-item">
@@ -340,7 +699,7 @@
 
                     <div class="faq-item">
                         <div class="faq-question">لماذا لا تعمل الإشعارات؟</div>
-                        <div class="faq-answer">تأكد من: 1) تفعيل الإشعارات في إعدادات التطبيق، 2) السماح للتطبيق بإرسال إشعارات في إعدادات الجهاز، 3) اختيار مدينة يدوياً (الإشعارات تتطلب الوضع اليدوي).</div>
+                        <div class="faq-answer">تأكد من: 1) تفعيل الإشعارات في إعدادات التطبيق، 2) السماح للتطبيق بإرسال إشعارات في إعدادات الجهاز، 3) التأكد من تحديد موقعك (سواء عبر GPS أو اختيار مدينة يدوياً).</div>
                     </div>
 
                     <div class="faq-item">
@@ -354,9 +713,12 @@
                     <ul>
                         <li>أوقات الصلوات الخمس (الفجر، الظهر، العصر، المغرب، العشاء)</li>
                         <li>أوقات الشروق والضحى ومنتصف الليل والثلث الأخير</li>
+                        <li>طرق حساب متعددة (أم القرى، رابطة العالم الإسلامي، الهيئة المصرية، وغيرها)</li>
+                        <li>اختيار مذهب العصر (الشافعي أو الحنفي)</li>
                         <li>إشعارات صوتية لأوقات الصلاة</li>
                         <li>التقويم الهجري مع إمكانية التعديل</li>
                         <li>تعديل أوقات الأذان والإقامة</li>
+                        <li>اتجاه القبلة مع البوصلة</li>
                         <li>دعم اللغتين العربية والإنجليزية</li>
                         <li>المظهر الفاتح والداكن</li>
                         <li>تحديد الموقع تلقائياً أو يدوياً</li>
@@ -366,7 +728,7 @@
                 <div class="contact-box">
                     <h3>تواصل معنا</h3>
                     <p>نحن هنا للمساعدة! لا تتردد في التواصل معنا</p>
-                    <a href="mailto:saudiweatherapp@gmail.com">saudiweatherapp@gmail.com</a>
+                    <a href="mailto:almktabapp@gmail.com">almktabapp@gmail.com</a>
                     <p class="response-time">نرد عادة خلال 24-48 ساعة</p>
                 </div>
             </div>
@@ -381,7 +743,7 @@
                         <div class="feature-card">
                             <div class="feature-icon">🕌</div>
                             <h3>Accurate Times</h3>
-                            <p>Precise calculation using Umm Al-Qura method</p>
+                            <p>Multiple calculation methods & madhab options</p>
                         </div>
                         <div class="feature-card">
                             <div class="feature-icon">🔔</div>
@@ -426,7 +788,7 @@
 
                     <div class="faq-item">
                         <div class="faq-question">What calculation method is used?</div>
-                        <div class="faq-answer">The app uses the Umm Al-Qura (Makkah) calculation method for prayer times, with Shafi'i/Hanbali/Maliki juristic method for Asr time.</div>
+                        <div class="faq-answer">The app offers multiple calculation methods (Umm Al-Qura, Muslim World League, Egyptian, and more). You can also choose the Asr madhab: Shafi'i (Shafi'i/Maliki/Hanbali) or Hanafi. Go to Settings to change the calculation method or madhab.</div>
                     </div>
 
                     <div class="faq-item">
@@ -441,7 +803,7 @@
 
                     <div class="faq-item">
                         <div class="faq-question">Why are notifications not working?</div>
-                        <div class="faq-answer">Make sure: 1) Notifications are enabled in app settings, 2) The app is allowed to send notifications in device settings, 3) You've selected a city manually (notifications require manual mode).</div>
+                        <div class="faq-answer">Make sure: 1) Notifications are enabled in app settings, 2) The app is allowed to send notifications in device settings, 3) Your location is set (either via GPS or by selecting a city manually).</div>
                     </div>
 
                     <div class="faq-item">
@@ -455,9 +817,12 @@
                     <ul>
                         <li>Five daily prayer times (Fajr, Dhuhr, Asr, Maghrib, Isha)</li>
                         <li>Sunrise, Duha, midnight, and last third of night times</li>
+                        <li>Multiple calculation methods (Umm Al-Qura, Muslim World League, Egyptian, and more)</li>
+                        <li>Asr madhab selection (Shafi'i or Hanafi)</li>
                         <li>Audio notifications for prayer times</li>
                         <li>Hijri calendar with adjustment option</li>
                         <li>Adhan and Iqama time adjustments</li>
+                        <li>Qibla direction with compass</li>
                         <li>Arabic and English language support</li>
                         <li>Light and dark themes</li>
                         <li>Automatic or manual location detection</li>
@@ -467,7 +832,7 @@
                 <div class="contact-box">
                     <h3>Contact Us</h3>
                     <p>We're here to help! Don't hesitate to reach out</p>
-                    <a href="mailto:saudiweatherapp@gmail.com">saudiweatherapp@gmail.com</a>
+                    <a href="mailto:almktabapp@gmail.com">almktabapp@gmail.com</a>
                     <p class="response-time">We usually respond within 24-48 hours</p>
                 </div>
             </div>
